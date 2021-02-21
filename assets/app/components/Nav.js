@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: 'none',
+    fontSize : 40,
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -167,7 +168,7 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography className={classes.title} variant="h1" noWrap>
             hicode
           </Typography>
           <div className={classes.search}>

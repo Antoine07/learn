@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Chips() {
+export default function Chips({ number, classic = true, titles = [] }) {
   const classes = useStyles();
 
   const handleDelete = () => {
@@ -27,52 +27,53 @@ export default function Chips() {
     console.info('You clicked the Chip.');
   };
 
-  return (
-    <div className={classes.root}>
-      <Chip label="Basic" />
-      <Chip label="Disabled" disabled />
-      <Chip avatar={<Avatar>M</Avatar>} label="Clickable" onClick={handleClick} />
-      <Chip
-        avatar={<Avatar alt="Natacha" src="/static/images/avatar/1.jpg" />}
-        label="Deletable"
-        onDelete={handleDelete}
-      />
-      <Chip
-        icon={<FaceIcon />}
-        label="Clickable deletable"
-        onClick={handleClick}
-        onDelete={handleDelete}
-      />
-      <Chip
-        label="Custom delete icon"
-        onClick={handleClick}
-        onDelete={handleDelete}
-        deleteIcon={<DoneIcon />}
-      />
-      <Chip label="Clickable Link" component="a" href="#chip" clickable />
-      <Chip
-        avatar={<Avatar>M</Avatar>}
-        label="Primary clickable"
-        clickable
-        color="primary"
-        onDelete={handleDelete}
-        deleteIcon={<DoneIcon />}
-      />
-      <Chip
-        icon={<FaceIcon />}
-        label="Primary clickable"
-        clickable
-        color="primary"
-        onDelete={handleDelete}
-        deleteIcon={<DoneIcon />}
-      />
-      <Chip label="Deletable primary" onDelete={handleDelete} color="primary" />
-      <Chip
-        icon={<FaceIcon />}
-        label="Deletable secondary"
-        onDelete={handleDelete}
-        color="secondary"
-      />
-    </div>
-  );
+
+  const Items = [
+    <Chip label="Basic" />,
+    <Chip label="Symfony" disabled />,
+    <Chip avatar={<Avatar>M</Avatar>} label="Python" onClick={handleClick} />,
+    <Chip
+      avatar={<Avatar alt="Natacha" src="/static/images/avatar/1.jpg" />}
+      label="Data"
+    />,
+    <Chip
+      icon={<FaceIcon />}
+      label="ML"
+      onClick={handleClick}
+    />,
+    <Chip
+      label="JS"
+      onClick={handleClick}
+      deleteIcon={<DoneIcon />}
+    />,
+    <Chip
+      icon={<FaceIcon />}
+      label="PHP"
+      color="secondary"
+    />
+  ];
+
+
+  if (classic)
+    return (
+      <div className={classes.root}>
+        {Items.slice(0, number).map((item, i) => (
+          item
+        ))}
+      </div>
+    );
+
+  if (!classic)
+    return (
+      <div className={classes.root}>
+        {titles.map((t, i) => (
+           <Chip
+            key={i}
+            icon={<FaceIcon />}
+            label={t}
+            onClick={handleClick}
+         />
+        ))}
+      </div>
+    )
 }
