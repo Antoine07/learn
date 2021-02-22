@@ -55,7 +55,7 @@ const Home = () => {
             Article, formation Web et Data
           </Typography>
         </Box>
-        <Grid item xs={12} spacing={1}>
+        <Grid item md={12} spacing={1}>
           <Box component="span" m={1} align="center">
             <Typography variant="p" component="h2" gutterBottom>
               Ce site propose des articles sous forme de TP/Exercices pour approfondir ou découvrir des techniques.
@@ -70,7 +70,7 @@ const Home = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12} spacing={1}>
+        <Grid item md={12} spacing={1}>
           <Box component="span" m={1}>
             <ChipItem titles={[
               'Le mieux noté', 'le plus technique', 'Data uniquement',
@@ -89,7 +89,7 @@ const Home = () => {
             {title : 'Explorer et nettoyer les données (Data)', price : 10, status : false},
             { title : 'Symfony extends Dans Doctrine', price : 50, status : false}
           ].map((course, i) => (
-            <Grid item xs={4} key={i}>
+            <Grid item md={4} xs={12} key={i}>
               <Paper className={classes.paper} elevation={0}>
                 <Card 
                  { ...course }
