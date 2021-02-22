@@ -58,7 +58,7 @@ const Home = () => {
         <Grid item xs={12} spacing={1}>
           <Box component="span" m={1} align="center">
             <Typography variant="p" component="h2" gutterBottom>
-              Ce site propose des articles sous forme de TP/Exercices pour approfondir et/ou découvrir des techniques.
+              Ce site propose des articles sous forme de TP/Exercices pour approfondir ou découvrir des techniques.
               <br />
               <small>Vous pouvez acheter un cours ou vous abonnez. Certains cours sont gratuits afin que vous puissiez découvrir les supports.</small>
               <p>
