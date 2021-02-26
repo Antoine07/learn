@@ -1,19 +1,15 @@
-import React from "react";
-import {
-  Box,
-  Container,
-  Typography,
-  Link,
-  Grid,
-  Paper,
-  Button
-} from "@material-ui/core";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getApiLessons } from "../store/actions/actions-types";
+
+import { Box, Typography, Grid, Paper, Button } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import Nav from "./Nav";
 import Card from "./Card";
-import ChipItem from './ChipItem';
+import ChipItem from "./ChipItem";
+import Copyright from "./Copyright";
+import Filter from "./Filter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,88 +17,107 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
+    margin: theme.spacing(1),
   },
   marge: {
     margin: 10,
   },
-  btn :{
-    marginRight : 5
-  }
+  btn: {
+    marginRight: 5,
+  },
 }));
-
-const Copyright = () => {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-};
 
 const Home = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const {
+    lesson: { isLoading, best, search },
+  } = useSelector((state) => {
+    return { lesson: state.lesson };
+  });
+
+  useEffect(() => {
+    dispatch(getApiLessons());
+  }, []);
+
+  const showSearch = () => {
+    if (search.length === 0) return false;
+
+    return search.map((course, i) => (
+      <Grid item md={4} xs={12} key={i}>
+        <Paper className={classes.paper} elevation={0}>
+          <Card {...course} />
+        </Paper>
+      </Grid>
+    ));
+  };
+
+  const showBest = () => {
+    if (isLoading === false)
+      return best.map((course, i) => (
+        <Grid item md={4} xs={12} key={i}>
+          <Paper className={classes.paper} elevation={0}>
+            <Card {...course} />
+          </Paper>
+        </Grid>
+      ));
+  };
 
   return (
-    <>
-      <Container maxWidth="lg">
-        <Nav />
+    <div className={classes.root}>
+      
+      <Grid container>
         <Box my={4}>
-          <Typography variant="h2" component="h1" gutterBottom>
-            Article, formation Web et Data
+          <Typography variant="h1" component="h2" gutterBottom>
+            Formation Data, Statistiques & Technologies Web
           </Typography>
         </Box>
-        <Grid item md={12} spacing={1}>
+        <Grid item md={12}>
           <Box component="span" m={1} align="center">
-            <Typography variant="p" component="h2" gutterBottom>
-              Ce site propose des articles sous forme de TP/Exercices pour approfondir ou découvrir des techniques.
+            <Typography component="h2" gutterBottom>
+              Pour accéder aux contenus des cours/exercices vous devez vous
+              abonner.
               <br />
-              <small>Vous pouvez acheter un cours ou vous abonnez. Certains cours sont gratuits afin que vous puissiez découvrir les supports.</small>
+              <small>
+                Cependant certains cours/exercices sont parfois libres d'accès,
+                vérifiez !
+              </small>
               <p>
-                <Button variant="contained" className={classes.btn} >Start subscription</Button>
+                <Button variant="contained" className={classes.btn}>
+                  Start subscription
+                </Button>
                 <Button variant="contained" color="primary">
                   voir le Catalogue
-              </Button>
+                </Button>
               </p>
             </Typography>
           </Box>
         </Grid>
-        <Grid item md={12} spacing={1}>
+        <Grid item md={12}>
+          <Filter />
+        </Grid>
+        <Grid md={12} item>
           <Box component="span" m={1}>
-            <ChipItem titles={[
-              'Le mieux noté', 'le plus technique', 'Data uniquement',
-              'Le dernier cours', 'Le moins cher', 'Les cours gratuits'
+            <ChipItem
+              titles={[
+                "Le mieux noté",
+                "le plus technique",
+                "Data uniquement",
+                "Le dernier cours",
+                "Le moins cher",
+                "Les cours gratuits",
               ]}
               classic={false}
-             />
+            />
           </Box>
         </Grid>
-        <Grid container spacing={1}>
-          {[
-            {title : 'Data ACP', price : 20, status :false },  
-            {title : 'Découvrir Python', price : 0, status : true }, 
-            {title : 'Observable RxJS', price : 10, status : false},
-            {title : 'DataViz', price : 30, status : false},
-            {title : 'Explorer et nettoyer les données (Data)', price : 10, status : false},
-            { title : 'Symfony extends Dans Doctrine', price : 50, status : false}
-          ].map((course, i) => (
-            <Grid item md={4} xs={12} key={i}>
-              <Paper className={classes.paper} elevation={0}>
-                <Card 
-                 { ...course }
-                />
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-      <Container maxWidth="md">
+        {search.length > 0 ? showSearch() : showBest()}
+      </Grid>
+      <Grid container>
         <Copyright />
-      </Container>
-    </>
+      </Grid>
+    </div>
   );
 };
 

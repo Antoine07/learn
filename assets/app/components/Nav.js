@@ -15,7 +15,10 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
-import { Button, Drawer , ChevronLeftIcon } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+
+import { Link } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -169,7 +172,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h1" noWrap>
-            hicode
+            <Link  to="/" style={{color : 'white', textDecoration : 'none'}}>Hicode</Link>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
