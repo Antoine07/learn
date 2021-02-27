@@ -19,7 +19,7 @@ const App = () => {
           </Grid>
         </Grid>
         <Switch>
-          <Route exact path="/" component={ ()  => <Lesson/> }/>
+          <Route exact path="/" component={ ()  => <Home/> }/>
           <Route exact path="/lesson/:id" component={() => <Lesson />} />
         </Switch>
       </Container>

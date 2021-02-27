@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, useParams } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Grid, Paper, Box, Typography } from "@material-ui/core";
+import { Grid, Typography, SnackbarContent, Button } from "@material-ui/core";
+
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import { useDispatch, useSelector } from "react-redux";
 import { getLessonById } from "../store/actions/actions-types";
+
+import Progess from './Progess';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,44 +19,68 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const action = (
+  <Button color="secondary" size="small">
+    lorem ipsum dolorem
+  </Button>
+);
+
 const Lesson = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const classes = useStyles();
+  const codeString = `
+      const sum = ({ numbers }) => ( 
+        [...numbers ].reduce((curr, acc) => acc + curr )
+      );
+
+      // React Component unpacking property title
+      const Content = ({ title }) => {
+
+        // brackets xss protection
+        return (
+          <p>{title}</p>
+        )
+      }
+  `;
   const {
-    lesson,
+    lesson
   } = useSelector((state) => state.lesson);
 
   useEffect(() => {
     dispatch(getLessonById({ id }));
   }, []);
 
-  console.log(lesson);
-
   return (
     <div className={classes.root}>
+      {lesson && (
         <Grid container>
-          <Grid item md={12}>
+          <Grid item md={4} >
             <Typography variant="h4" component="h1" gutterBottom>
-                1
+             Progress bar
+            </Typography>
+          </Grid>
+          <Grid item md={8}>
+            <Typography variant="h4" component="h1" gutterBottom>
+              {lesson.name}
             </Typography>
             <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Rhoncus dolor purus non enim praesent elementum facilisis leo vel.
-              Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-              gravida rutrum quisque non tellus. Convallis convallis tellus id
-              interdum velit laoreet id donec ultrices. Odio morbi quis commodo
-              odio aenean sed adipiscing. Amet nisl suscipit adipiscing bibendum
-              est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-              Metus vulputate eu scelerisque felis imperdiet proin fermentum
-              leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt
-              lobortis feugiat vivamus at augue. At augue eget arcu dictum
-              varius duis at consectetur lorem. Velit sed ullamcorper morbi
-              tincidunt. Lorem donec massa sapien faucibus et molestie ac.
+              {lesson.content}
+            </Typography>
+            <Typography paragraph>
+              <SyntaxHighlighter language="javascript" style={dark}>
+                {codeString}
+              </SyntaxHighlighter>
+                <SnackbarContent
+                  message={
+                    'I love candy. I love cookies. I love cupcakes. \
+                     I love cheesecake. I love chocolate.'
+                  }
+                />
             </Typography>
           </Grid>
         </Grid>
+      )}
     </div>
   );
 };
