@@ -2,23 +2,21 @@
   "entrypoints": {
     "app": {
       "js": [
-        "http://localhost:8080/build/runtime.js",
-        "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_default_index_js_http_0_0_0_0_port_8080-node_m-bce09b.js",
-        "http://localhost:8080/build/vendors-node_modules_core-js_internals_export_js-node_modules_core-js_internals_object-set-pr-34fdd2.js",
-        "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-3e0f9a.js",
-        "http://localhost:8080/build/app.js"
+        "/build/runtime.7699d3ba.js",
+        "/build/393.49b9bd5a.js",
+        "/build/630.532033cd.js",
+        "/build/app.20ca8c25.js"
       ],
       "css": [
-        "http://localhost:8080/build/app.css"
+        "/build/app.b75294ae.css"
       ]
     },
     "react_start": {
       "js": [
-        "http://localhost:8080/build/runtime.js",
-        "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_default_index_js_http_0_0_0_0_port_8080-node_m-bce09b.js",
-        "http://localhost:8080/build/vendors-node_modules_core-js_internals_export_js-node_modules_core-js_internals_object-set-pr-34fdd2.js",
-        "http://localhost:8080/build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-40b99a.js",
-        "http://localhost:8080/build/react_start.js"
+        "/build/runtime.7699d3ba.js",
+        "/build/393.49b9bd5a.js",
+        "/build/838.73baac8c.js",
+        "/build/react_start.58daa6e2.js"
       ]
     }
   }

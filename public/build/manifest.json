@@ -1,14 +1,10 @@
 {
-  "build/app.css": "http://localhost:8080/build/app.css",
-  "build/app.js": "http://localhost:8080/build/app.js",
-  "build/react_start.js": "http://localhost:8080/build/react_start.js",
-  "build/runtime.js": "http://localhost:8080/build/runtime.js",
-  "build/vendors-node_modules_webpack-dev-server_client_default_index_js_http_0_0_0_0_port_8080-node_m-bce09b.js": "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_default_index_js_http_0_0_0_0_port_8080-node_m-bce09b.js",
-  "build/vendors-node_modules_core-js_internals_export_js-node_modules_core-js_internals_object-set-pr-34fdd2.js": "http://localhost:8080/build/vendors-node_modules_core-js_internals_export_js-node_modules_core-js_internals_object-set-pr-34fdd2.js",
-  "build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-c47936.js": "http://localhost:8080/build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-c47936.js",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-3e0f9a.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-3e0f9a.js",
-  "build/static/images/contemplative-reptile.jpg": "http://localhost:8080/build/static/images/contemplative-reptile.jpg",
-  "build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-3a5cff.js": "http://localhost:8080/build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-3a5cff.js",
-  "build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-cdb71f.js": "http://localhost:8080/build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-cdb71f.js",
-  "build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-40b99a.js": "http://localhost:8080/build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-40b99a.js"
+  "build/app.css": "/build/app.b75294ae.css",
+  "build/app.js": "/build/app.20ca8c25.js",
+  "build/react_start.js": "/build/react_start.58daa6e2.js",
+  "build/runtime.js": "/build/runtime.7699d3ba.js",
+  "build/393.49b9bd5a.js": "/build/393.49b9bd5a.js",
+  "build/838.73baac8c.js": "/build/838.73baac8c.js",
+  "build/630.532033cd.js": "/build/630.532033cd.js",
+  "build/static/images/contemplative-reptile.jpg": "/build/static/images/contemplative-reptile.jpg"
 }
