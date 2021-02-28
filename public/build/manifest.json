@@ -1,10 +1,11 @@
 {
-  "build/app.css": "/build/app.b75294ae.css",
-  "build/app.js": "/build/app.20ca8c25.js",
-  "build/react_start.js": "/build/react_start.54a1bad6.js",
-  "build/runtime.js": "/build/runtime.7699d3ba.js",
-  "build/393.49b9bd5a.js": "/build/393.49b9bd5a.js",
-  "build/838.73baac8c.js": "/build/838.73baac8c.js",
-  "build/630.532033cd.js": "/build/630.532033cd.js",
-  "build/static/images/contemplative-reptile.jpg": "/build/static/images/contemplative-reptile.jpg"
+  "build/app.css": "http://localhost:8080/build/app.css",
+  "build/app.js": "http://localhost:8080/build/app.js",
+  "build/react_start.js": "http://localhost:8080/build/react_start.js",
+  "build/runtime.js": "http://localhost:8080/build/runtime.js",
+  "build/vendors-node_modules_webpack-dev-server_client_default_index_js_http_0_0_0_0_port_8080-node_m-bce09b.js": "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_default_index_js_http_0_0_0_0_port_8080-node_m-bce09b.js",
+  "build/vendors-node_modules_core-js_modules_es_object_define-property_js-node_modules_core-js_module-38e327.js": "http://localhost:8080/build/vendors-node_modules_core-js_modules_es_object_define-property_js-node_modules_core-js_module-38e327.js",
+  "build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-44fea1.js": "http://localhost:8080/build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-44fea1.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-5f28e9.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-5f28e9.js",
+  "build/static/images/contemplative-reptile.jpg": "http://localhost:8080/build/static/images/contemplative-reptile.jpg"
 }

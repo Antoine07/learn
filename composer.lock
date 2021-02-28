@@ -2267,21 +2267,21 @@
         },
         {
             "name": "stof/doctrine-extensions-bundle",
-            "version": "dev-master",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stof/StofDoctrineExtensionsBundle.git",
-                "reference": "f3c948b390f82a357d814331e6ea47bcda813a38"
+                "reference": "c01e73e49cee5eac3353b6c4ebdbb0a151348c85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/f3c948b390f82a357d814331e6ea47bcda813a38",
-                "reference": "f3c948b390f82a357d814331e6ea47bcda813a38",
+                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/c01e73e49cee5eac3353b6c4ebdbb0a151348c85",
+                "reference": "c01e73e49cee5eac3353b6c4ebdbb0a151348c85",
                 "shasum": ""
             },
             "require": {
                 "gedmo/doctrine-extensions": "^2.3.4 || ^3.0.0",
-                "php": "^7.1.3 || ^8.0",
+                "php": "^7.1.3",
                 "symfony/framework-bundle": "^4.3 || ^5.0"
             },
             "require-dev": {
@@ -2293,11 +2293,10 @@
                 "doctrine/mongodb-odm-bundle": "to use the MongoDB ODM extensions",
                 "symfony/mime": "To use the Mime component integration for Uploadable"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -2332,9 +2331,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stof/StofDoctrineExtensionsBundle/issues",
-                "source": "https://github.com/stof/StofDoctrineExtensionsBundle/tree/master"
+                "source": "https://github.com/stof/StofDoctrineExtensionsBundle/tree/v1.5.0"
             },
-            "time": "2021-01-20T11:21:48+00:00"
+            "time": "2020-09-30T13:25:17+00:00"
         },
         {
             "name": "symfony/asset",
@@ -6358,27 +6357,26 @@
         },
         {
             "name": "fzaninotto/faker",
-            "version": "dev-master",
+            "version": "v1.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "5ffe7db6c80f441f150fc88008d64e64af66634b"
+                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/5ffe7db6c80f441f150fc88008d64e64af66634b",
-                "reference": "5ffe7db6c80f441f150fc88008d64e64af66634b",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
+                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3 || ^7.0 || ^8.0"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
                 "ext-intl": "*",
                 "phpunit/phpunit": "^4.8.35 || ^5.7",
                 "squizlabs/php_codesniffer": "^2.9.2"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -6407,10 +6405,10 @@
             ],
             "support": {
                 "issues": "https://github.com/fzaninotto/Faker/issues",
-                "source": "https://github.com/fzaninotto/Faker/tree/master"
+                "source": "https://github.com/fzaninotto/Faker/tree/v1.9.2"
             },
             "abandoned": true,
-            "time": "2020-12-11T09:59:14+00:00"
+            "time": "2020-12-11T09:56:16+00:00"
         },
         {
             "name": "nikic/php-parser",

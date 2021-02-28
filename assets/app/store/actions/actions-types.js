@@ -40,7 +40,8 @@ export const getApiLessons = (status = ['publish', 'private'], maxBest = MAX_BES
        ( async () => {
           try {
               const headers = {
-                  'Content-Type': 'application/json'
+                  'Content-Type': 'application/json',
+                  'Access-Control-Allow-Origin': '*'
               };
 
               dispatch(set_isLoading(true));
