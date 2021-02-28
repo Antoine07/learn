@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/{reactRouting}", name="index", defaults={"reactRouting" : null })
      */
     public function index(): Response
     {
@@ -44,8 +44,6 @@ class HomeController extends AbstractController
     public function getLesson(SerializerInterface $serializer, Lesson $lesson): Response
     {
         
-        dump($lesson);
-
         return new Response(
             $serializer->serialize(
                 [], 

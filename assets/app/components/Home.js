@@ -38,7 +38,7 @@ const Home = () => {
   });
 
   useEffect(() => {
-    dispatch(getApiLessons());
+    if (best.length === 0) dispatch(getApiLessons());
   }, []);
 
   const showSearch = () => {
@@ -66,7 +66,6 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
-      
       <Grid container>
         <Box my={4}>
           <Typography variant="h1" component="h2" gutterBottom>

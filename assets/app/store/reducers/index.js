@@ -1,9 +1,8 @@
-// on combine ici nos reducers
-
 import { combineReducers } from "redux";
 
 import lesson from "./lesson";
+import inscription from "./inscription";
 
 export default combineReducers({
- lesson
+ lesson, i : inscription
 });

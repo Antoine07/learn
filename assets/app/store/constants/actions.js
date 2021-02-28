@@ -10,3 +10,9 @@ export const URL_LAST_LESSONS = "http://127.0.0.1:8000/api/best-lessons";
 export const URL_API = "http://127.0.0.1:8000/api/";
 
 export const MAX_BEST = 5;
+
+// LOGIN/PASSWORD
+export const SET_LOGIN = 'SET_LOGIN';
+export const LOGGED = 'LOGGED';
+
+export const URL_PASSWORD = 'http://127.0.0.1:8000/api/pass';

@@ -18,7 +18,8 @@ const stateInit = {
   id: null,
   reset: false,
   rate: null,
-  lesson : null
+  lesson : null,
+  reload : 0
 };
 
 const reducer = (state = stateInit, action) => {

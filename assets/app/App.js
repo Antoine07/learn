@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Nav from './components/Nav';
 import GlobalStyle from "./Styles/Global";
 import Lesson from "./components/Lesson";
+import Inscription from './components/Inscription';
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={ ()  => <Home/> }/>
           <Route exact path="/lesson/:id" component={() => <Lesson />} />
+          <Route exact path="/login" component={() => <Inscription />} />
+
         </Switch>
       </Container>
     </Router>
