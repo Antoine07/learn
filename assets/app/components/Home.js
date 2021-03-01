@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getApiLessons } from "../store/actions/actions-types";
 
-import { Box, Typography, Grid, Paper, Button } from "@material-ui/core";
+import { Box, Typography, Grid, Paper, Button, TextField } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -67,31 +68,49 @@ const Home = () => {
   return (
     <div className={classes.root}>
       <Grid container>
-        <Box my={4}>
-          <Typography variant="h1" component="h2" gutterBottom>
-            Formation Data, Statistiques & Technologies Web
-          </Typography>
-        </Box>
-        <Grid item md={12}>
-          <Box component="span" m={1} align="center">
-            <Typography component="h2" gutterBottom>
-              Pour accéder aux contenus des cours/exercices vous devez vous
-              abonner.
-              <br />
-              <small>
-                Cependant certains cours/exercices sont parfois libres d'accès,
-                vérifiez !
-              </small>
-              <p>
-                <Button variant="contained" className={classes.btn}>
-                  Start subscription
-                </Button>
-                <Button variant="contained" color="primary">
-                  voir le Catalogue
-                </Button>
-              </p>
+        <Grid item md={10}>
+          <Box my={4} align="left">
+            <Typography variant="h1" component="h2" gutterBottom>
+              Coder !
             </Typography>
           </Box>
+        </Grid>
+        <Grid item md={2}>
+          <Box my={4} align="rigth">
+            <Typography variant="p" component="p" gutterBottom>
+              Déjà inscrit ?
+          </Typography>
+            <form className={classes.root} noValidate autoComplete="off">
+              <div>
+                <TextField id="standard-basic" label="Standard" />
+              </div>
+              <div>
+                <TextField id="standard-basic" label="Standard" />
+              </div>
+              <Button  color="primary">
+                Start coding !
+              </Button>
+            </form>
+            <Button color="inherit">
+              <Link to="/login" style={{ color: 'white', textDecoration: 'none' }} >Login/Inscription</Link>
+            </Button>
+          </Box>
+        </Grid>
+        <Grid item md={6}>
+          <Typography component="h2" gutterBottom>
+            Pour accéder aux contenus des cours/exercices vous devez vous
+            abonner.
+              <br />
+            <small>
+              Cependant certains cours/exercices sont parfois libres d'accès,
+              vérifiez !
+              </small>
+            <p>
+              <Button variant="contained" color="primary">
+                voir le Catalogue
+                </Button>
+            </p>
+          </Typography>
         </Grid>
         <Grid item md={12}>
           <Filter />

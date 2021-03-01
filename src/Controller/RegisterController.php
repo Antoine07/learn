@@ -19,8 +19,8 @@ class RegisterController extends AbstractController
 
         return new Response(
             $serializer->serialize(
-                [], 
-                'json', ['groups' => 'show_lesson'] 
+                ['a' => '1'], 
+                'json' 
             )
         );
     }

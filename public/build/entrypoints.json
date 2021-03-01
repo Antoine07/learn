@@ -17,7 +17,7 @@
         "http://localhost:8080/build/runtime.js",
         "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_default_index_js_http_0_0_0_0_port_8080-node_m-bce09b.js",
         "http://localhost:8080/build/vendors-node_modules_core-js_internals_export_js-node_modules_core-js_internals_object-set-pr-34fdd2.js",
-        "http://localhost:8080/build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-07523f.js",
+        "http://localhost:8080/build/vendors-node_modules_material-ui_core_esm_AppBar_AppBar_js-node_modules_material-ui_core_esm_-a00cb6.js",
         "http://localhost:8080/build/react_start.js"
       ]
     }

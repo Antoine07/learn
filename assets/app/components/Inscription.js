@@ -3,14 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
-  TextField,
   FormControl,
   Input,
   FormHelperText,
   InputLabel,
   Grid,
   Typography,
-  Button
+  Button,
+  Checkbox,
+  FormLabel,
+  FormGroup,
+  FormControlLabel
 } from "@material-ui/core";
 import { loginPassword, set_login } from "../store/actions/actions-types";
 
@@ -18,7 +21,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
       margin: theme.spacing(1),
-      width: "25ch",
+    },
+    formControl: {
+      margin: theme.spacing(3),
     },
   },
 }));
@@ -26,63 +31,52 @@ const useStyles = makeStyles((theme) => ({
 const Inscription = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { email, password } = useSelector(state => state.i);
+  const { email, password, choices } = useSelector(state => state.i);
 
   useEffect(() => {
-    
+
   }, [email, password]);
 
-  const handleChangeL = e => {
-      const { name, value } = e.target;
+  const handleChange = e => {
+    const { name, value } = e.target;
 
-      dispatch(set_login({ name, value }));
+    dispatch(set_login({ name, value }));
   }
 
   const handleSubmit = e => {
-      e.preventDefault();
+    e.preventDefault();
+    const { name } = e.target;
 
-      dispatch(loginPassword({email, password}));
+    if (name === 'login')
+      dispatch(loginPassword({ email, password }));
   }
 
   return (
     <Grid container spacing={2}>
-      <Grid item md={6} >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Login
-        </Typography>
-        <form className={classes.root} noValidate autoComplete="off">
-          <div>
-            <FormControl>
-              <InputLabel htmlFor="my-input">Email address</InputLabel>
-              <Input
-              onChange={handleChangeL} name="email"
-              id="my-input" aria-describedby="my-helper-text" />
-              <FormHelperText id="my-helper-text">
-                We'll never share your email.
-              </FormHelperText>
-            </FormControl>
-          </div>
-          <div>
-            <FormControl>
-              <InputLabel htmlFor="my-input">Password</InputLabel>
-              <Input
-              onChange={handleChangeL} name="password"
-              id="my-input" aria-describedby="my-helper-text" />
-            </FormControl>
-          </div>
-          <Button variant="contained" color="primary">
-            Login
-          </Button>
-        </form>
-      </Grid>
-      <Grid item md={6}>
+      <Grid item md={12}>
         <Typography variant="h4" component="h1" gutterBottom>
           Inscription
         </Typography>
-        <form className={classes.root} noValidate autoComplete="off">
+        <form className={classes.root} name="inscription">
           <div>
-            <FormControl>
+            <FormControl fullWidth={true}>
               <InputLabel htmlFor="my-input">Email address</InputLabel>
+              <Input
+                onChange={handleChange}
+                name="email"
+                id="my-input1" aria-describedby="my-helper-text" />
+              <FormHelperText id="my-helper-text">
+                We'll never share your email.
+              </FormHelperText>
+            </FormControl>
+          </div>
+          <div>
+            <FormControl fullWidth={true}>
+              <InputLabel
+                onChange={handleChange}
+                name="password"
+                htmlFor="my-input2"
+              >Password</InputLabel>
               <Input id="my-input" aria-describedby="my-helper-text" />
               <FormHelperText id="my-helper-text">
                 We'll never share your email.
@@ -90,12 +84,36 @@ const Inscription = () => {
             </FormControl>
           </div>
           <div>
-            <FormControl>
-              <InputLabel htmlFor="my-input">Password</InputLabel>
+            <FormControl fullWidth={true}>
+              <InputLabel
+                onChange={handleChange}
+                name="passwordc"
+                htmlFor="my-input3"
+              >Password confirme</InputLabel>
               <Input id="my-input" aria-describedby="my-helper-text" />
               <FormHelperText id="my-helper-text">
                 We'll never share your email.
               </FormHelperText>
+            </FormControl>
+          </div>
+          <div>
+            <FormControl component="fieldset" fullWidth={true}>
+              <FormLabel component="legend">Choix de l'abonnement</FormLabel>
+              <FormGroup>
+                {choices.map(({ name, checked, label }, i) =>
+                  <FormControlLabel
+                    key={i}
+                    control={<Checkbox checked={checked} onChange={handleChange} name={label} />}
+                    label={name}
+                  />
+                )}
+              </FormGroup>
+              <FormHelperText>Choix unique</FormHelperText>
+            </FormControl>
+            <FormControl>
+              <Button variant="contained" color="primary" type="submit">
+                Login
+              </Button>
             </FormControl>
           </div>
         </form>

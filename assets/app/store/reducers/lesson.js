@@ -95,6 +95,7 @@ const reducer = (state = stateInit, action) => {
 
     case GET_LESSON:
       const { id } = action.payload;
+      
       const lesson = state.lessons.filter( lesson => lesson.id == id )[0];
 
       return{

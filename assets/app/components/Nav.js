@@ -8,20 +8,18 @@ import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 
-import { Button } from "@material-ui/core";
-
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
+    height: 100
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -190,9 +188,7 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Button color="inherit">
-              <Link to="/login" style={{color : 'white', textDecoration: 'none' }} >Login/Inscription</Link>
-            </Button>
+            
             {false && (
               <>
                 <IconButton aria-label="show 4 new mails" color="inherit">

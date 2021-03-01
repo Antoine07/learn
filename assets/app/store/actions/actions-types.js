@@ -8,7 +8,8 @@ import {
   URL_API,
   GET_LESSON,
   URL_PASSWORD,
-  SET_LOGIN
+  SET_LOGIN,
+  LOGGED
 } from "../constants/actions";
 
 import axios from "axios";
@@ -89,16 +90,16 @@ export const getLessonByIdApi = (payload) => {
 };
 
 // Login/Password
-
 export const loginPassword = (payload) => {
   return (dispatch) => {
     (async () => {
       try {
         const { email, password } = payload;
-
         const { data } = await axios.post(URL_PASSWORD, {
-          login, password
+          email, password
         });
+        console.log(data);
+        
         dispatch(logged({ user : data }));
 
       } catch (err) {
