@@ -18,7 +18,8 @@ const stateInit = {
   id: null,
   reset: false,
   rate: null,
-  lesson : null
+  lesson : null,
+  reload : 0
 };
 
 const reducer = (state = stateInit, action) => {
@@ -94,6 +95,7 @@ const reducer = (state = stateInit, action) => {
 
     case GET_LESSON:
       const { id } = action.payload;
+      
       const lesson = state.lessons.filter( lesson => lesson.id == id )[0];
 
       return{
